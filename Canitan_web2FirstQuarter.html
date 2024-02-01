@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function yey(){
+				NumOfStudents = prompt("Number of students:");
+				table = document.getElementById('table');
+				for(i = 1; i <= NumOfStudents; i++){
+					StudentId = prompt("Student Id:");
+					StudentName = prompt("Student Name:");
+					StudentGrade = prompt("Grade of Student:");
+					var tableRow = table.insertRow();
+				}	
+			}
+		</script>
+	</head>
+	<body onload = "yey()">
+		<form name="Mainform">
+			<table value = "table">
+			</table>
+		</form>
+	</body>
+</html>

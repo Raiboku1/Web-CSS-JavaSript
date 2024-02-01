@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<script type = "text/javascript">
+			function initializeArray(){
+				var Num1 = document.getElementById('txtBoxNum').value;
+				if(Num1 == ""){
+					notif = "*Please put someting on the box UWU! :>";
+					document.getElementById('Notify').innerHTML = notif;
+				}else{
+					var Val = new Array(11);
+
+					Val[0] = "Zero";
+					Val[1] = "One";
+					Val[2] = "Two";
+					Val[3] = "Three";
+					Val[4] = "Four";
+					Val[5] = "Five";
+					Val[6] = "Six";
+					Val[7] = "Seven";
+						Val[8] = "Eight";
+					Val[9] = "Nine";
+					Val[10] = "Ten";
+				
+					finalVal = " ";
+					header = "Word Value";
+
+					for(i = 0; i < Val.length; i++){
+						if(Num1 == i){
+							finalVal = Val[i];
+							document.getElementById('outputArray').innerHTML = "<h2>" + header + "<h2>" +
+								"<table border = \"1\" width= \"100%\">" +
+								"<thead><th width = \"100\" align = \"left\">Subscript</th>" +
+								"<th align = \"left\">value</th></thead><tbody>" +
+								"<tr><td>" + Num1 + "</td><td>" + finalVal + "</td></tr>" +
+								"</tbody></table>";
+						}
+					}
+					
+					notif = " ";
+					document.getElementById('Notify').innerHTML = notif;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="MainForm">
+			<text>Enter Your Value:(Number only 0-10)</text>
+			<input type="number" min = "0" max = "10" id="txtBoxNum">
+			<span style="color:red" id="Notify"></span>
+			</br></br>
+			<input type="button" onclick="initializeArray()" value = "Process">
+			</br></br>
+			<span id="outputArray"></span>
+		</form>
+	</body>
+</html>

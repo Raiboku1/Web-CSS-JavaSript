@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function GradeRegistration(){
+                var NumOfStudents = document.getElementById('NumOfStudents').value;
+                var NumOfStudents1 = parseInt(NumOfStudents) + 1;
+
+                var IdNumber = document.getElementById('IdNumber').value;
+                var Name = document.getElementById('Name').value;
+                var Grade1 = document.getElementById('Grade1').value;
+                var Grade2 = document.getElementById('Grade2').value;
+                var Grade3 = document.getElementById('Grade3').value;
+
+                if(NumOfStudents!="" && IdNumber!="" && Name!="" && Grade1!="" && Grade2!="" && Grade3!=""){
+                    var Grade4 = parseInt(Grade1);
+                    var Grade5 = parseInt(Grade2);
+                    var Grade6 = parseInt(Grade3);
+                    var Ave = (Grade4 + Grade5 + Grade6)/3;
+
+                    var table = document.getElementById('resultTable');
+                    var row = table.insertRow(-1); 
+                    var rows = table.rows.length;
+                    if(rows <= NumOfStudents1){
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        var cell5 = row.insertCell(4);
+                        var cell6 = row.insertCell(5);
+                    }else{
+                        var message = "Data exceeds the Number of Students Provided";
+                        alert(message);
+                    }
+
+                    cell1.innerHTML = IdNumber;
+                    cell2.innerHTML = Name;
+                    cell3.innerHTML = Grade4;
+                    cell4.innerHTML = Grade5;
+                    cell5.innerHTML = Grade6;
+                    cell6.innerHTML = Ave;
+
+                    notif = " ";
+					document.getElementById('Notify1').innerHTML = notif;
+                    document.getElementById('Notify2').innerHTML = notif;
+                    document.getElementById('Notify3').innerHTML = notif;
+                    document.getElementById('Notify4').innerHTML = notif;
+                    document.getElementById('Notify5').innerHTML = notif;
+                    document.getElementById('Notify6').innerHTML = notif;
+
+                }else if(NumOfStudents==""){
+                    notif = "*Please put someting on the box UWU! :>";
+					document.getElementById('Notify1').innerHTML = notif;
+                    notif2 = " ";
+                    document.getElementById('Notify2').innerHTML = notif2;
+                    document.getElementById('Notify3').innerHTML = notif2;
+                    document.getElementById('Notify4').innerHTML = notif2;
+                    document.getElementById('Notify5').innerHTML = notif2;
+                    document.getElementById('Notify6').innerHTML = notif2;
+                }else if(IdNumber==""){
+                    notif = "*Please put someting on the box UWU! :>";
+					document.getElementById('Notify2').innerHTML = notif;
+                    notif2 = " ";
+					document.getElementById('Notify1').innerHTML = notif2;
+                    document.getElementById('Notify3').innerHTML = notif2;
+                    document.getElementById('Notify4').innerHTML = notif2;
+                    document.getElementById('Notify5').innerHTML = notif2;
+                    document.getElementById('Notify6').innerHTML = notif2;
+                }else if(Name==""){
+                    notif = "*Please put someting on the box UWU! :>";
+					document.getElementById('Notify3').innerHTML = notif;
+                    notif2 = " ";
+					document.getElementById('Notify1').innerHTML = notif2;
+                    document.getElementById('Notify2').innerHTML = notif2;
+                    document.getElementById('Notify4').innerHTML = notif2;
+                    document.getElementById('Notify5').innerHTML = notif2;
+                    document.getElementById('Notify6').innerHTML = notif2;
+                }else if(Grade1==""){
+                    notif = "*Please put someting on the box UWU! :>";
+					document.getElementById('Notify4').innerHTML = notif;
+                    notif2 = " ";
+					document.getElementById('Notify1').innerHTML = notif2;
+                    document.getElementById('Notify2').innerHTML = notif2;
+                    document.getElementById('Notify3').innerHTML = notif2;
+                    document.getElementById('Notify5').innerHTML = notif2;
+                    document.getElementById('Notify6').innerHTML = notif2;
+                }else if(Grade2=="" ){
+                    notif = "*Please put someting on the box UWU! :>";
+					document.getElementById('Notify5').innerHTML = notif;
+                    notif2 = " ";
+					document.getElementById('Notify1').innerHTML = notif2;
+                    document.getElementById('Notify2').innerHTML = notif2;
+                    document.getElementById('Notify3').innerHTML = notif2;
+                    document.getElementById('Notify4').innerHTML = notif2;
+                    document.getElementById('Notify6').innerHTML = notif2;
+                }else if(Grade3==""){
+                    notif = "*Please put someting on the box UWU! :>";
+					document.getElementById('Notify6').innerHTML = notif;
+                    notif2 = " ";
+					document.getElementById('Notify1').innerHTML = notif2;
+                    document.getElementById('Notify2').innerHTML = notif2;
+                    document.getElementById('Notify3').innerHTML = notif2;
+                    document.getElementById('Notify4').innerHTML = notif2;
+                    document.getElementById('Notify5').innerHTML = notif2;
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <form name="MainForm">
+            <h2>Student Grade Registration</h2>
+            <text>Enter the number of Student to record: </text>
+            <input type="text" id="NumOfStudents">
+                <span style="color:red" id="Notify1"></span>
+            </br></br>
+            <text>ID Number: </text>
+            <input type="text" id="IdNumber">
+                <span style="color:red" id="Notify2"></span>
+            </br>
+            <text>Name: </text>
+            <input type="text" id="Name">
+                <span style="color:red" id="Notify3"></span>
+            </br></br>
+            <text>Grades </text>
+            </br></br>
+            <text>Math: </text>
+            <input type="text" id="Grade1">
+                <span style="color:red" id="Notify4"></span>
+            </br>
+            <text>Science: </text>
+            <input type="text" id="Grade2">
+                <span style="color:red" id="Notify5"></span>
+            </br>
+            <text>English: </text>
+            <input type="text" id="Grade3">
+                <span style="color:red" id="Notify6"></span>
+            </br></br>
+            <input type="button" value="Submit" onclick="GradeRegistration()">
+            </br>
+                
+		</form>
+        <table id="resultTable" border="1" width="100%">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>English</th>
+                <th>Average</th>
+            </tr>
+        </table>
+    </body>
+</html>

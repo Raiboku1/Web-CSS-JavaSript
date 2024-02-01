@@ -1,0 +1,193 @@
+
+<!-- saved from url=(0059)file:///C:/Users/Admin/Desktop/WEB2/Canitan-Exercise_9.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-image: 'C:/Users/Admin/Desktop/WEB2/Canitan-Exercise_11/pics/Logo.png';
+            }
+            h2 {
+                color: #333;
+                margin-bottom: 10px;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            input[type="text"], select {
+                width: 50%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                box-sizing: border-box;
+            }
+            input[type="text1"], select {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                box-sizing: border-box;
+            }
+            input[type="date"], input[type="number"], select {
+                width: 30%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                box-sizing: border-box;
+            }
+            input[type="button"], button {
+                padding: 10px 20px;
+                background-color: #00ff22;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            input[type="button"]:hover, button:hover {
+                background-color: #ff009d;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 20px;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+        <script type="text/javascript">
+            function als(){
+                if(document.getElementById('agree').checked==true){
+                    enone= document.getElementById('one').value;
+                    entwo= document.getElementById('two').value;
+                    enthree= document.getElementById('three').value;
+                    enfour= document.getElementById('four').value;
+                    ensix= document.getElementById('six').value;
+                    enseven= document.getElementById('seven').value;
+                    datee= document.getElementById('birthday').value;
+                    sexe= document.getElementById('optionee').value;
+                    permAdd= document.getElementById('permAdd').value;
+                    currAdd= document.getElementById('currAdd').value;
+                    money= document.getElementById('money').value;
+
+                    table = document.getElementById('table');
+                    row = table.insertRow(-1); 
+                    rows = table.rows.length;
+                            var cell1 = row.insertCell(0);
+                            var cell2 = row.insertCell(1);
+                            var cell3 = row.insertCell(2);
+                            var cellpAdd = row.insertCell(3);
+                            var cellcAdd = row.insertCell(4);
+                            var cell4 = row.insertCell(5);
+                            var cell5 = row.insertCell(6);
+                            var cell6 = row.insertCell(7);
+                            var cell7 = row.insertCell(8);
+                            var cell8 = row.insertCell(9);
+                            var cell9 = row.insertCell(10);
+                
+                        cell1.innerHTML = enone;
+                        cell2.innerHTML = entwo;
+                        cell3.innerHTML = enthree;
+                        cellpAdd.innerHTML = permAdd;
+                        cellcAdd.innerHTML = currAdd;
+                        cell4.innerHTML = datee; 
+                        cell5.innerHTML = enfour;
+                        cell6.innerHTML = sexe;
+                        cell7.innerHTML = ensix;                         
+                        cell8.innerHTML = enseven;
+                        cell9.innerHTML = money;
+
+                    document.getElementById('reset').addEventListener('click', function() {
+                        document.getElementById('one').value = '';
+                        document.getElementById('two').value = '';
+                        document.getElementById('three').value = '';
+                        document.getElementById('birthday').value = '';
+                        document.getElementById('four').value = '';
+                        document.getElementById('five').value = '';
+                        document.getElementById('six').value = '';
+                        document.getElementById('seven').value = '';
+                        document.getElementById('permAdd').value = '';
+                        document.getElementById('currAdd').value = '';
+                        document.getElementById('money').value = '';
+
+                        let table = document.getElementById('table');
+                        let rowCount = table.rows.length;
+
+                        for (let i = 1; i < rowCount; i++) {
+                            table.deleteRow(i);     
+                        }
+                });  
+            }else{
+                    alert('Please agree to our terms and conditions or else no access for you!');
+                }    
+        }
+ 
+    </script>
+    <style type="text/css" id="operaUserStyle"></style></head>
+
+    <body>
+        <h2>DAPPA Registration Form </h2><br>
+        
+        <text>First Name:  </text> <br>
+        <input type="text" id="one"> <br> <br>
+        
+        <text>Middle Name: </text> <br>
+        <input type="text" id="two"> <br> <br>
+        
+        <text>Last Name: </text> <br>
+        <input type="text" id="three"> <br> <br>
+        
+        <text>Permanent Address: </text> <br>
+        <input type="text1" id="permAdd"> <br> <br>
+
+        <text>Current Address: </text> <br>
+        <input type="text1" id="currAdd"> <br> <br>
+
+        <label for="birthday">Birthdate: </label> <br>
+        <input type="date" id="birthday" name="birthday"> <br> <br>
+        
+        <text>Age: </text> <br>
+        <input type="number" id="four" oninput="this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\..*?)\..*/g, &#39;$1&#39;);"> <br> <br>
+        
+        <label for="birthday">Sex: </label>
+        <select id="optionee">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select> <br> <br>
+        
+        <text>Mobile Number: </text> <br>
+        <input type="text" id="six" oninput="this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\..*?)\..*/g, &#39;$1&#39;);"> <br> <br>
+        
+        <text>Email Address: </text> <br> 
+        <input type="text" id="seven"> <br> <br>
+
+        <text>Enter Initial Amount Deposit(Php): </text> <br> 
+        <input type="number" id="money"> <br> <br>
+
+        <h4>Terms & Conditions Agreement</h4>
+        <input type="checkbox" name="agree" id="agree" value="agree"> Agree
+        <p>*By checking the box above means agreeing to our 
+            <a href="https://www.youtube.com/watch?v=MTW4sIL9Dpw">terms & conditions.</a></p>
+    <br>
+    <button id="reset">Reset</button>
+    <input type="button" value="Submit" onclick="als();">
+        <table id="table" border="1" width="100%">
+            <tbody><tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Permanent Address</th>
+                <th>Current Address</th>
+                <th>Birthdate</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Mobile Number</th>
+                <th>Email Address</th>
+                <th>Initial Deposit</th>
+            </tr>
+        </tbody></table>
+</body></html>
